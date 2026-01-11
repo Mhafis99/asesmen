@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Middleware;
 
@@ -9,7 +9,7 @@ class SiswaMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->check() && auth()->user()->role === 'siswa') {
+        if (auth()->check() && auth()->user()->isSiswa()) {
             return $next($request);
         }
 

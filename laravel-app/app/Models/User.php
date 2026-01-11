@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Models;
 
@@ -39,6 +39,11 @@ class User extends Authenticatable
     public function isAdmin(): bool
     {
         return $this->role === 'admin';
+    }
+
+    public function isSiswa(): bool
+    {
+        return $this->role === 'siswa';
     }
 
     public function isPembimbing(): bool
